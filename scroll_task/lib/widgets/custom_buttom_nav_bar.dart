@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -18,10 +20,10 @@ class CustomBottomNav extends StatelessWidget {
     return Container(
       color: const Color(0xff0F1115),
       width: double.maxFinite,
-      padding: const EdgeInsets.only(
+      padding: EdgeInsets.only(
         left: 16,
         right: 16,
-        bottom: 50,
+        bottom: Platform.isAndroid ? 10 : 50,
         top: 10,
       ),
       child: Row(
