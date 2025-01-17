@@ -43,7 +43,9 @@ class _BonFirePageState extends State<BonFirePage> {
     return Scaffold(
       bottomNavigationBar: CustomBottomNav(
         navItems: navItems,
-        onTap: () {},
+        onTap: () {
+          //change page route via method
+        },
       ),
       body: Stack(
         children: [
@@ -83,6 +85,13 @@ class _BonFirePageState extends State<BonFirePage> {
                           fontSize: 34,
                           fontWeight: FontWeight.w700,
                           color: Color(0xffCCC8FF),
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(0, 2),
+                              blurRadius: 20,
+                              color: Color.fromRGBO(0, 0, 0, 0.2),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(width: 8),
@@ -149,6 +158,7 @@ class _BonFirePageState extends State<BonFirePage> {
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
                           radius: 30,
@@ -189,12 +199,13 @@ class _BonFirePageState extends State<BonFirePage> {
                   const SizedBox(height: 12),
                   const Center(
                     child: Text(
-                      'Mine is definitely the peace in the morning.',
+                      '"Mine is definitely the peace in the morning."',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color.fromRGBO(203, 201, 255, 0.7),
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
+                        fontStyle: FontStyle.italic,
                       ),
                     ),
                   ),

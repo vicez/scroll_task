@@ -22,13 +22,15 @@ class CustomBottomNav extends StatelessWidget {
         left: 16,
         right: 16,
         bottom: 50,
-        top: 20,
+        top: 10,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: navItems.map((item) {
-          final Size iconSize = item.iconName != 'profile' ? const Size(35, 35) : const Size(50, 50);
+          final Size iconSize = item.iconName != 'profile'
+              ? const Size(35, 35)
+              : const Size(50, 50);
 
           return GestureDetector(
             onTap: onTap,
@@ -54,10 +56,12 @@ class CustomBottomNav extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18),
                       ),
                       child: Text(
-                        item.notificationCount.toString(),
+                        item.notificationCount != null
+                            ? item.notificationCount.toString()
+                            : '',
                         style: const TextStyle(
-                          color: Color(0x000F1115),
-                          fontSize: 18,
+                          color: Color(0xff0F1115),
+                          fontSize: 10,
                         ),
                       ),
                     ),
